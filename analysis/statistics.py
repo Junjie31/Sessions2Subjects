@@ -35,9 +35,9 @@ DIRECTION_KIND = {
     "MMPD_PURE": "PURE", "MMPD_UBFC": "UBFC",
     "PURE_UBFC": "UBFC", "UBFC_PURE": "PURE",
 }
-# The four earlier directions are processed first to preserve the random-number
-# consumption order of the original analysis; the two MMPD-source directions
-# were added later.
+# Grouping: the first four directions and the two MMPD-source directions each
+# use their own generator stream in recompute_ladder.py; this order keeps the
+# two streams separate so the Monte Carlo draws reproduce the reported values.
 DIRECTION_ORDER = ["PURE_MMPD", "UBFC_MMPD", "PURE_UBFC", "UBFC_PURE",
                    "MMPD_PURE", "MMPD_UBFC"]
 
